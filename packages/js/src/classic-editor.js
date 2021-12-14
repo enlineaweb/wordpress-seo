@@ -14,6 +14,7 @@ import { MetaboxFill, MetaboxSlot } from "./classic-editor/components/metabox/sl
 import createClassicEditorWatcher from "./watchers/classicEditorWatcher";
 import { getInitialState } from "./classic-editor/initial-state";
 import { getAnalysisConfiguration } from "./classic-editor/analysis";
+import initFeaturedImagePlugin from "./classic-editor/plugins/featuredImage";
 
 domReady( async() => {
 	// Initialize the tab behavior of the metabox.
@@ -37,6 +38,8 @@ domReady( async() => {
 		analysis: getAnalysisConfiguration(),
 		initialState: getInitialState(),
 	} );
+
+	initFeaturedImagePlugin();
 
 	// Until ALL the components are carried over, the `@yoast/editor` store is still needed.
 	initEditorStore();
